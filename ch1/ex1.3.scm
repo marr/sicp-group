@@ -1,0 +1,10 @@
+(define (square x) (* x x))
+
+(define (test a b c)
+    (if (< a b)
+        (if (< a c)
+            (+ (square b) (square c))
+            (+ (square a) (square b)))
+        (if (< b c)
+            (+ (square a) (square c))
+            (+ (square a) (square b)))))
