@@ -1,0 +1,2 @@
+a-plus-abs will take two arguments a and b and return the sum of a and the absolute value of b.
+This is done by subtracting b when b is less than zero or adding b when b is greater than zero.

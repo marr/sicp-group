@@ -1,0 +1,16 @@
+Given the following:
+;
+;(define (p) (p))
+
+;(define (test x y)
+;  (if (= x 0)
+;      0
+;      y))
+
+called with:
+
+; (test 0 (p))
+
+The function call will be stuck in a loop when executing in applicative order. Normal order will return 0
+because it executes the = operator with the operands 0 and 0. This is because applicative order never finishes executing because it tries to evaluate the argument (p) which is defined as itself, (p).
+
