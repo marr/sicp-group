@@ -10,9 +10,9 @@
 (define (improve guess x)
     (/
         (+
-            (/ guess (square x))
-            (* x 2))
-        3))
+            (/ x (square guess))
+        (* guess 2))
+    3))
 
 (define (good-enough? guess x)
     (<
