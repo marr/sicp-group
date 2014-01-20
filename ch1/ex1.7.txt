@@ -1,0 +1,27 @@
+; For small numbers, the difference between guesses will be smaller than the limit used with sqrt-iter to validate a guess.
+; For large numbers, the procedures are problematic becuase the limit is too small.
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x)
+                 x)))
+(define (square x) (* x x ))
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(define (abs x)
+  (cond ((< x 0) (- x))
+        (else x)))
+         
+; Fitness function using a relative epsilon
+(define (good-enough? guess x)
+    (< (abs (/ (- (square guess) x) x)) 0.001))
+
+; This doesn't work well for larger numbers when there are larger denomonators and numerators that are small.

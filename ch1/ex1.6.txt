@@ -1,0 +1,1 @@
+Due to applicative order execution sqrt-iter will not terminate because it is returning a substituend that is itself.
